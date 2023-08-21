@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function Genres() {
-    const navigate = useNavigate()
+
+  const navigate = useNavigate()
 
     const [animes, setAnimes] = useState([]) 
     const [genres,setGenres] = useState([])
-    const [id,setID] = useState(1)
+    const [id,setID] = useState(0)
 
     const getGenres = async () => {
         const data = await axios.get(`https://api.jikan.moe/v4/genres/anime`)
@@ -28,6 +29,7 @@ function Genres() {
         console.log(err)
       })
       }
+
       useEffect(() => {
         getGenre()
       }, [id])

@@ -24,9 +24,9 @@ function News() {
         <div className='flex flex-col mt-10 gap-y-6'>
             
             {
-                news.map((news,id) => (
+                news.map((news,key) => (
                     <>
-                    <div key={id} className='flex ml-24 '>
+                    <div key={key} className='flex ml-24 '>
                         <img src={news.images.jpg.image_url} className='w-24' />
                         <div className='flex flex-col gap-y-4 ml-4'>
                             <h1 className='text-xl w-[700px] text-purple-300 font-bold'>{news.title}</h1>

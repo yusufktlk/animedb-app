@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function SearchBar(props) {
+function    SearchBar(props) {
     const navigate = useNavigate()
   return (
     <div className='flex justify-between mt-2'>
