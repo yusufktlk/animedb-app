@@ -16,8 +16,7 @@ function News() {
 
       useEffect(() => {
         getNews()
-      }, [news])
-      console.log(news)
+      }, [])
   return (
     <div>
         <h1 className='text-3xl text-lime-500 ml-24 mt-12 font-thin'>Anime News</h1>
@@ -25,10 +24,9 @@ function News() {
         <div className='flex flex-col mt-10 gap-y-6'>
             
             {
-                news.map((news,key) => (
+                news.map((news,id) => (
                     <>
-                    
-                    <div key={key} className='flex ml-24 '>
+                    <div key={id} className='flex ml-24 '>
                         <img src={news.images.jpg.image_url} className='w-24' />
                         <div className='flex flex-col gap-y-4 ml-4'>
                             <h1 className='text-xl w-[700px] text-purple-300 font-bold'>{news.title}</h1>

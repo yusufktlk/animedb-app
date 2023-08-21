@@ -17,7 +17,7 @@ function TopCharacters() {
 
       useEffect(() => {
         getTopCharacters()
-      }, [topCharacters])
+      }, [])
 
   return (
     <div>

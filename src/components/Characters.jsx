@@ -11,12 +11,14 @@ function Characters() {
     const {id} = useParams()
     console.log(id)
    
-
-    useEffect(() => {
-       axios.get(`https://api.jikan.moe/v4/anime/${id}/characters`)
+    const getChacters = () => {
+       const data = axios.get(`https://api.jikan.moe/v4/anime/${id}/characters`)
       .then(res => setCharacters(res.data.data.splice(0,25)))
       .catch(err => console.log(err))
-      console.log(characters)
+    } 
+
+    useEffect(() => {
+        getChacters()
     }, [location.pathname, id])
     
   return (

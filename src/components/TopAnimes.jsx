@@ -16,7 +16,7 @@ function TopAnimes() {
 
       useEffect(() => {
         getTopAnimes()
-      }, [topAnimes])
+      }, [])
 
 
       

@@ -15,9 +15,6 @@ function Character() {
       .then(res => setCharacter(res.data.data))
     }, [location.pathname, id])
     
-    console.log(character)
-
-   const arr = [character?.nicknames]
    
    
   return (
