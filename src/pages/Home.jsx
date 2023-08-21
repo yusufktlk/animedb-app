@@ -33,7 +33,7 @@ function Home() {
       useEffect(() => {
         inputValue === "" ? getEmpity() : getAnime()
        
-      }, [])
+      }, [inputValue])
       
     
     

@@ -11,7 +11,7 @@ function Anime() {
         const [details, setDetails] = useState()
     
         const {id} = useParams()
-        console.log(id)
+        
 
         useEffect(() => {
             axios.get(`https://api.jikan.moe/v4/anime/${id}`)
