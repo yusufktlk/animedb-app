@@ -1,7 +1,19 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import ClipLoader from "react-spinners/ClipLoader";
 
 function News() {
+
+    let [loading, setLoading] = useState(false);
+    useEffect(() => {
+      setLoading(true)
+      setTimeout(() => {
+        setLoading(false)
+      }, 2000);
+    }, [])
+    
+
+
 
     const [news, setNews] = useState([])
 
@@ -19,8 +31,12 @@ function News() {
       }, [])
   return (
     <div>
-        <h1 className='text-3xl text-lime-500 ml-24 mt-12 font-thin'>Anime News</h1>
-
+    {
+        loading ? 
+        <ClipLoader color="#00FF00" size={80} className='ml-44 mt-24' />
+        :
+        <div>
+            <h1 className='text-3xl text-lime-500 ml-24 mt-12 font-thin'>Anime News</h1>
         <div className='flex flex-col mt-10 gap-y-6'>
             
             {
@@ -39,8 +55,11 @@ function News() {
                     </>
                 ))
             }
-            
         </div>
+        </div>
+    }    
+    
+        
 
     </div>
   )

@@ -1,8 +1,17 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import ClipLoader from "react-spinners/ClipLoader";
 
 function TopAnimes() {
+    let [loading, setLoading] = useState(false);
+    useEffect(() => {
+      setLoading(true)
+      setTimeout(() => {
+        setLoading(false)
+      }, 2000);
+    }, [])
+
     const navigate = useNavigate()
     const [topAnimes, setTopAnimes] = useState([])
 
@@ -23,9 +32,13 @@ function TopAnimes() {
 
   return (
     <div>
-        <h1 className='text-3xl text-lime-400 ml-24 mt-12 font-thin tracking-wider'>Top Anime Series</h1>
-
-        <div className='grid grid-cols-6 mx-24 gap-x-10 gap-y-6 mb-12'>
+        {
+            loading ? 
+            <ClipLoader color="#00FF00" size={80} className='ml-44 mt-24' />
+            :
+            <div>
+                <h1 className='text-3xl text-lime-400 ml-24 mt-12 font-thin tracking-wider'>Top Anime Series</h1>
+            <div className='grid grid-cols-6 mx-24 gap-x-10 gap-y-6 mb-12'>
             {
                 topAnimes?.map((anime,key) => (
                     <div key={key}>
@@ -33,7 +46,10 @@ function TopAnimes() {
                     </div>
                 ))
             }
-        </div>
+                </div>
+            </div>
+        }
+       
 
     </div>
   )
