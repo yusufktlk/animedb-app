@@ -27,9 +27,9 @@ function TopAnimes() {
 
         <div className='grid grid-cols-6 mx-24 gap-x-10 gap-y-6 mb-12'>
             {
-                topAnimes.map((anime,key) => (
+                topAnimes?.map((anime,key) => (
                     <div key={key}>
-                        <img onClick={() => navigate(`anime/${anime?.mal_id}`) & window.scroll(0,0)} src={anime.images.jpg.image_url} className='rounded-xl opacity-80 hover:opacity-100 duration-500 hover:scale-105  m-auto mt-4 h-[300px]' />
+                        <img onClick={() => navigate(`anime/${anime?.mal_id}`) & window.scroll(0,0)} src={anime?.images.jpg.image_url} className='rounded-xl opacity-80 hover:opacity-100 duration-500 hover:scale-105  m-auto mt-4 h-[300px]' />
                     </div>
                 ))
             }

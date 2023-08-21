@@ -24,7 +24,7 @@ function Recommendations() {
     <div className='flex justify-around mx-24 mt-24 mb-24 text-center text-sm'>
                 {
                     recom.map((rec,key) =>(
-                        <div key={key} onClick={() => navigate(`/anime/${recom[4]?.entry?.mal_id}`) & window.scroll(0,0)}>
+                        <div key={key} onClick={() => navigate(`/anime/${rec?.entry?.mal_id}`) & window.scroll(0,0)}>
                              <img src={rec?.entry?.images?.jpg.image_url} className='w-[200px] h-[300px] cursor-pointer rounded-lg' />
                              <h1 className='mt-1 w-[200px]'>{rec?.entry?.title}</h1>
                         </div>

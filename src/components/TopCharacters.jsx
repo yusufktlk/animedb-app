@@ -7,7 +7,7 @@ function TopCharacters() {
     
     const [topCharacters, setTopCharacters] = useState([])
         
-    const getTopAnimes = async () => {
+    const getTopCharacters = async () => {
         const data = await axios.get(`https://api.jikan.moe/v4/top/characters`)
         .then(res => setTopCharacters(res.data.data.splice(0,6)))
         .catch(err => {
@@ -16,7 +16,7 @@ function TopCharacters() {
       }
 
       useEffect(() => {
-        getTopAnimes()
+        getTopCharacters()
       }, [topCharacters])
 
   return (
