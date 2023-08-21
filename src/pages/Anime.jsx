@@ -3,8 +3,16 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Recommendations from '../components/Recommendations'
 import Characters from '../components/Characters'
+import ClipLoader from "react-spinners/ClipLoader";
 
 function Anime() {
+    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+      setLoading(true)
+      setTimeout(() => {
+        setLoading(false)
+      }, 2000);
+    }, [])
 
         const navigate = useNavigate()
 
@@ -24,7 +32,12 @@ function Anime() {
 
   return (
    <div>
-    <h1 onClick={() => navigate("/") & window.scroll(0,0)} className='ml-20 mb-4 mt-4 rounded-lg text-center bg-lime-600 text-black font-bold p-1 w-24 cursor-pointer'>HOME</h1>
+    {
+        loading ?
+        <ClipLoader color="#00FF00" size={80} className='ml-44 mt-24' />
+        :
+        <div>
+             <h1 onClick={() => navigate("/") & window.scroll(0,0)} className='ml-20 mb-4 mt-4 rounded-lg text-center bg-lime-600 text-black font-bold p-1 w-24 cursor-pointer'>HOME</h1>
             <div className='flex flex-row gap-x-32 mx-20 mt-1  '>
                 <div>
                     <div className='flex'>
@@ -73,6 +86,9 @@ function Anime() {
             <Recommendations />
 
             <Characters />
+        </div>
+    }
+   
    </div>
   )
 }

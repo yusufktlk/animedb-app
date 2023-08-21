@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import ClipLoader from "react-spinners/ClipLoader";
 
 function Character() {
-  let [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
     useEffect(() => {
       setLoading(true)
       setTimeout(() => {

@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react'
 import ClipLoader from "react-spinners/ClipLoader";
 
 function News() {
-
-    let [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
       setLoading(true)
       setTimeout(() => {

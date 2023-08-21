@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom'
 import ClipLoader from "react-spinners/ClipLoader";
 
 function Genres() {
-  let [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
     useEffect(() => {
       setLoading(true)
       setTimeout(() => {
         setLoading(false)
-      }, 1500);
+      }, 2000);
     }, [])
 
   const navigate = useNavigate()
